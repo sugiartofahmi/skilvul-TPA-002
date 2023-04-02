@@ -20,8 +20,9 @@ button.onclick = () => {
     ? ((validationHeight.style.visibility = `visible`),
       (validationWeight.style.visibility = `hidden`),
       (output.innerHTML = ``))
-    : weight.value.length > 1 && height.value.length > 1
-    ? ((result = (weight.value / (height.value / 100) ** 2).toFixed(1)),
+    : weight.value.length > 1 &&
+      height.value.length > 1 &&
+      ((result = (weight.value / (height.value / 100) ** 2).toFixed(1)),
       (bmi =
         result <= 18.5
           ? "Underweight"
@@ -35,9 +36,6 @@ button.onclick = () => {
   <strong>${bmi}</strong>`),
       (weight.value = ""),
       (height.value = ""),
-      (validationWeight.style.visibility = `hidden`),
-      (validationHeight.style.visibility = `hidden`))
-    : ((output.innerHTML = ``),
       (validationWeight.style.visibility = `hidden`),
       (validationHeight.style.visibility = `hidden`));
 };
