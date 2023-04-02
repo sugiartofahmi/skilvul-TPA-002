@@ -9,16 +9,16 @@ let result = "",
 
 button.onclick = () => {
   weight.value.length < 1 && height.value.length < 1
-    ? ((validationWeight.innerHTML = `<span class="danger">Weight cannot be empty</span>`),
-      (validationHeight.innerHTML = `<span class="danger">Height cannot be empty</span>`),
+    ? ((validationWeight.style.visibility = `visible`),
+      (validationHeight.style.visibility = `visible`),
       (output.innerHTML = ``))
     : weight.value.length < 1
-    ? ((validationWeight.innerHTML = `<span class="danger">Weight cannot be empty</span>`),
-      (validationHeight.innerHTML = ``),
+    ? ((validationWeight.style.visibility = `visible`),
+      (validationHeight.style.visibility = `hidden`),
       (output.innerHTML = ``))
     : height.value.length < 1
-    ? ((validationHeight.innerHTML = `<span class="danger">Height cannot be empty</span>`),
-      (validationWeight.innerHTML = ``),
+    ? ((validationHeight.style.visibility = `visible`),
+      (validationWeight.style.visibility = `hidden`),
       (output.innerHTML = ``))
     : weight.value.length > 1 && height.value.length > 1
     ? ((result = (weight.value / (height.value / 100) ** 2).toFixed(1)),
@@ -39,9 +39,9 @@ button.onclick = () => {
         `</strong>`),
       (weight.value = ""),
       (height.value = ""),
-      (validationWeight.innerHTML = ``),
-      (validationHeight.innerHTML = ``))
+      (validationWeight.style.visibility = `hidden`),
+      (validationHeight.style.visibility = `hidden`))
     : ((output.innerHTML = ``),
-      (validationWeight.innerHTML = ``),
-      (validationHeight.innerHTML = ``));
+      (validationWeight.style.visibility = `hidden`),
+      (validationHeight.style.visibility = `hidden`));
 };
