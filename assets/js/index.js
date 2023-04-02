@@ -30,13 +30,9 @@ button.onclick = () => {
           : result >= 25 && result <= 29.9
           ? "Overweight "
           : result >= 30 && "Obesity"),
-      (output.innerHTML =
-        ` Your BMI is <strong> ` +
-        result +
-        `</strong> which means You are
-  <strong>` +
-        bmi +
-        `</strong>`),
+      (output.innerHTML = ` Your BMI is <strong> 
+        ${result}</strong> which means You are
+  <strong>${bmi}</strong>`),
       (weight.value = ""),
       (height.value = ""),
       (validationWeight.style.visibility = `hidden`),
