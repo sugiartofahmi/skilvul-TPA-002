@@ -45,8 +45,17 @@
   border-radius: 5px;
 }
 
+.form_input {
+  border: 2px solid #c7ced7;
+}
+
 #form_button {
   width: 110px;
   background-color: rgb(100, 88, 244);
   color: white;
+  border: none;
+}
+
+::placeholder {
+  color: #c7ced7;
 }
