@@ -8,14 +8,19 @@ let result = "",
   bmi = "";
 
 button.onclick = () => {
-  weight.value.length < 1
-    ? (validationWeight.innerHTML = `<span class="danger">Weight cannot be empty</span>`)
-    : (validationWeight.innerHTML = ``);
-  height.value.length < 1
-    ? (validationHeight.innerHTML = `<span class="danger">Height cannot be empty</span>`)
-    : (validationHeight.innerHTML = ``);
-
-  weight.value.length > 1 && height.value.length > 1
+  weight.value.length < 1 && height.value.length < 1
+    ? ((validationWeight.innerHTML = `<span class="danger">Weight cannot be empty</span>`),
+      (validationHeight.innerHTML = `<span class="danger">Height cannot be empty</span>`),
+      (output.innerHTML = ``))
+    : weight.value.length < 1
+    ? ((validationWeight.innerHTML = `<span class="danger">Weight cannot be empty</span>`),
+      (validationHeight.innerHTML = ``),
+      (output.innerHTML = ``))
+    : height.value.length < 1
+    ? ((validationHeight.innerHTML = `<span class="danger">Height cannot be empty</span>`),
+      (validationWeight.innerHTML = ``),
+      (output.innerHTML = ``))
+    : weight.value.length > 1 && height.value.length > 1
     ? ((result = (weight.value / (height.value / 100) ** 2).toFixed(1)),
       (bmi =
         result <= 18.5
@@ -33,6 +38,10 @@ button.onclick = () => {
         bmi +
         `</strong>`),
       (weight.value = ""),
-      (height.value = ""))
-    : (output.innerHTML = ``);
+      (height.value = ""),
+      (validationWeight.innerHTML = ``),
+      (validationHeight.innerHTML = ``))
+    : ((output.innerHTML = ``),
+      (validationWeight.innerHTML = ``),
+      (validationHeight.innerHTML = ``));
 };
