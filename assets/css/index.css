@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  color: #293845;
+  font-family: "Inter", sans-serif;
 }
 
 #container {
@@ -31,8 +33,8 @@
 }
 
 #form,
-#result {
-  width: 395px;
+#output {
+  width: 470px;
 }
 
 .form_container {
@@ -50,12 +52,25 @@
 }
 
 #form_button {
-  width: 110px;
+  width: 120px;
   background-color: rgb(100, 88, 244);
   color: white;
   border: none;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 ::placeholder {
   color: #c7ced7;
+}
+
+#header > p,
+#form > .form_container > label,
+#output > p {
+  font-weight: 500;
+}
+
+.danger {
+  color: rgb(255, 94, 94);
 }
