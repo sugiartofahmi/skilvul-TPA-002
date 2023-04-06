@@ -1,13 +1,13 @@
-const button = document.getElementById("form_button"),
-  weight = document.getElementById("input_weight"),
+const form = document.getElementById("form"),
+  weight = document.querySelector("#input_weight"),
   height = document.getElementById("input_height"),
   output = document.getElementById("output_text"),
   validationWeight = document.getElementById("validation_weight"),
   validationHeight = document.getElementById("validation_height");
-let result = "",
-  bmi = "";
+let result, bmi;
 
-button.onclick = () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   weight.value.length < 1 && height.value.length < 1
     ? ((validationWeight.style.visibility = `visible`),
       (validationHeight.style.visibility = `visible`),
@@ -31,11 +31,10 @@ button.onclick = () => {
           : result >= 25 && result <= 29.9
           ? "Overweight "
           : result >= 30 && "Obesity"),
-      (output.innerHTML = ` Your BMI is <strong> 
+      (output.innerHTML = ` Your BMI is <strong>
         ${result}</strong> which means You are
   <strong>${bmi}</strong>`),
-      (weight.value = ""),
-      (height.value = ""),
+      form.reset(),
       (validationWeight.style.visibility = `hidden`),
       (validationHeight.style.visibility = `hidden`));
-};
+});
