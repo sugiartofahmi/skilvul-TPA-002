@@ -19,7 +19,7 @@
         <h1>Check your BMI</h1>
         <p>Enter your weight and height below to check your BMI results</p>
       </section>
-      <section id="form">
+      <form id="form">
         <section class="form_container">
           <label for="weight">Put your weight in here (KG)</label>
           <input
@@ -44,8 +44,8 @@
             <span class="danger">Height cannot be empty</span>
           </p>
         </section>
-        <button id="form_button">Calculate BMI</button>
-      </section>
+        <button type="submit" id="form_button">Calculate BMI</button>
+      </form>
       <section id="output">
         <p id="output_text"></p>
       </section>
